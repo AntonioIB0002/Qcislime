@@ -1,0 +1,9 @@
+AudioStreamPlayer2D
+AudioStreamPlayer3D
+Label
+Button
+VBoxContainer
+Node2D
+Sprite2D
+Node3D
+Control

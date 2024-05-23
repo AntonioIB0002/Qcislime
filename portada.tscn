@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://drw3te1bo7xvh"]
+
+[ext_resource type="Script" path="res://Portada.gd" id="1_y52sg"]
+[ext_resource type="Texture2D" uid="uid://c0flileli7i0o" path="res://Assets/Fondo.jpeg" id="2_n1n3m"]
+[ext_resource type="AudioStream" uid="uid://cvmtwuvklj5qv" path="res://Sounds/intro.mp3" id="3_k6crj"]
+
+[node name="Portada" type="Node2D"]
+script = ExtResource("1_y52sg")
+
+[node name="Fondo" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo"]
+position = Vector2(584, 328.5)
+scale = Vector2(1.12695, 0.633789)
+texture = ExtResource("2_n1n3m")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 461.0
+offset_top = -24.0
+offset_right = 804.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Qcislime"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 704.0
+offset_top = 572.0
+offset_right = 1154.0
+offset_bottom = 659.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Jose Antonio Ibarra Bravo
+Leonardo Hernandez Granadoz
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 448.0
+offset_top = 460.0
+offset_right = 746.0
+offset_bottom = 523.0
+size_flags_vertical = 8
+
+[node name="Jugar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Jugar"
+
+[node name="Musicfondo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_k6crj")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]

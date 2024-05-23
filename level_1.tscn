@@ -1,0 +1,108 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0wikqxyfmwfu"]
+
+[ext_resource type="ArrayMesh" uid="uid://ccql0htrbabll" path="res://School/done.obj" id="1_80kgl"]
+[ext_resource type="PackedScene" uid="uid://b4eq88hhnyla7" path="res://player.tscn" id="1_118t5"]
+[ext_resource type="PackedScene" uid="uid://d3i6cysk62djt" path="res://coin.tscn" id="3_t1xpw"]
+[ext_resource type="PackedScene" uid="uid://c7450h1wcv4lk" path="res://test.tscn" id="4_lxfw2"]
+[ext_resource type="AudioStream" uid="uid://dc4bleqw225tc" path="res://Sounds/Musica de fondo.mp3" id="6_x6s5s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3o68"]
+size = Vector3(117.866, 0.5, 250)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ghew4"]
+sky_top_color = Color(0.639216, 0.313726, 0.54902, 1)
+sky_horizon_color = Color(0.25098, 0.654902, 0.670588, 1)
+
+[sub_resource type="Sky" id="Sky_8hswf"]
+sky_material = SubResource("ProceduralSkyMaterial_ghew4")
+
+[sub_resource type="Environment" id="Environment_fan3p"]
+background_mode = 2
+sky = SubResource("Sky_8hswf")
+
+[node name="level1" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 19.5758, 0)
+mesh = ExtResource("1_80kgl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99462, 0, 79.0204)
+shape = SubResource("BoxShape3D_f3o68")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.479335, 0.620579, -0.620579, 0, 0.707107, 0.707107, 0.877632, -0.338941, 0.338941, -5.97345, 3.7405, 7.99624)
+shadow_enabled = true
+
+[node name="player" parent="." instance=ExtResource("1_118t5")]
+transform = Transform3D(0.99769, 0, -0.0679282, 0, 1, 0, 0.0679282, 0, 0.99769, 1, 1, 111.233)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fan3p")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Test" parent="Control" instance=ExtResource("4_lxfw2")]
+
+[node name="Coins" type="Node3D" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.47723, 1.07167, 23.6545)
+
+[node name="coin2" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(0.413744, -0.910382, 0.00456004, 0.910278, 0.413767, 0.0138434, -0.0144896, -0.00157673, 0.999894, -0.0280818, 1.55508, 26.4885)
+
+[node name="coin3" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.47723, 1.07167, 30.2555)
+
+[node name="coin4" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(0.413744, -0.910382, 0.00456004, 0.910278, 0.413767, 0.0138434, -0.0144896, -0.00157673, 0.999894, -0.0280818, 1.55508, 33.0895)
+
+[node name="coin5" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.47723, 1.07167, 38.4075)
+
+[node name="coin6" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(0.413744, -0.910382, 0.00456004, 0.910278, 0.413767, 0.0138434, -0.0144896, -0.00157673, 0.999894, -0.0280818, 1.55508, 41.2415)
+
+[node name="coin7" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.47723, 1.07167, 45.0085)
+
+[node name="coin8" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(0.413744, -0.910382, 0.00456004, 0.910278, 0.413767, 0.0138434, -0.0144896, -0.00157673, 0.999894, -0.0280818, 1.55508, 47.8425)
+
+[node name="coin9" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.47723, 1.07167, 54.7532)
+
+[node name="coin10" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(0.413744, -0.910382, 0.00456004, 0.910278, 0.413767, 0.0138434, -0.0144896, -0.00157673, 0.999894, -0.0280818, 1.55508, 57.5872)
+
+[node name="coin11" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.47723, 1.07167, 61.3542)
+
+[node name="coin12" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(0.413744, -0.910382, 0.00456004, 0.910278, 0.413767, 0.0138434, -0.0144896, -0.00157673, 0.999894, -0.0280818, 1.55508, 64.1882)
+
+[node name="coin13" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.47723, 1.07167, 69.5062)
+
+[node name="coin14" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(0.413744, -0.910382, 0.00456004, 0.910278, 0.413767, 0.0138434, -0.0144896, -0.00157673, 0.999894, -0.0280818, 1.55508, 72.3401)
+
+[node name="coin15" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.47723, 1.07167, 76.1072)
+
+[node name="coin16" parent="Coins" instance=ExtResource("3_t1xpw")]
+transform = Transform3D(0.413744, -0.910382, 0.00456004, 0.910278, 0.413767, 0.0138434, -0.0144896, -0.00157673, 0.999894, -0.0280818, 1.55508, 78.9411)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_x6s5s")
+volume_db = 5.0
+autoplay = true
